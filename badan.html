@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Engagement Rate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Gaya.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Engagement Rate Calulator</h2>
+        <form method="POST">
+            <label>Jumlah Likes:</label>
+            <input type="number" name="likes" required>
+
+            <label>Jumlah Comments:</label>
+            <input type="number" name="comments" required>
+
+            <label>Jumlah Shares:</label>
+            <input type="number" name="shares" required>
+
+            <label>Total Followers:</label>
+            <input type="number" name="followers" required>
+
+            <button type="submit">Hitung</button>
+        </form>
+
+        {% if er is defined and er is not none %}
+            <h3>Engagement Rate: {{ er }}%</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
